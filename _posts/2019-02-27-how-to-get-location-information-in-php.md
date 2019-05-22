@@ -111,4 +111,4 @@ See [here](https://github.com/nathan-fiscaletti/ipstackgeo-php/blob/v1.3/src/IPS
 
 A finished implementation of this library might look something like this
 
-https://gist.github.com/nathan-fiscaletti/260491c0f8d7e80ee2bbc27f3a732072
+[See Gist](https://gist.github.com/nathan-fiscaletti/260491c0f8d7e80ee2bbc27f3a732072)

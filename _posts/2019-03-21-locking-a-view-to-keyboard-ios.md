@@ -30,4 +30,4 @@ KeyboardLock(
 ).lock()
 ```
 
-https://github.com/nathan-fiscaletti/KeyboardLockiOS
+[See the GitHub Repository](https://github.com/nathan-fiscaletti/KeyboardLockiOS)
