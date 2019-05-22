@@ -21,30 +21,30 @@ projects:
   # sort_by options:
   #   - pushed
   #   - stars
-  limit: 9
+  limit: 1000
   exclude:
     archived: false
     forks: true
     projects:
-    # - nathan-fiscaletti.github.io
+      - project-downloads
+      - sf-rlteams
 
-  social_media:
-    linkedin: nathan-fiscaletti
+social_media:
+  website: https://nathanf.tk/
+  linkedin: nathan-fiscaletti
+  facebook: nathan-fiscaletti
+  stackoverflow: 1720829
+  medium: fisc510
   # behance: your_username
   # dribbble: your_username
-  # facebook: your_username
   # hackerrank: your_username
   # instagram: your_username
   # keybase: your_username
-  # linkedin: nathan-fiscaletti
   # mastodon: your_username
-  # medium: your_username
-  # stackoverflow: your_user_id
   # telegram: your_username
   # twitter: your_username
   # unsplash: your_username
   # vk: your_username
-  # website: http://your_website_url
   # youtube: your_username
 
 topics:
