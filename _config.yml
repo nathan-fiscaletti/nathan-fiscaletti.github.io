@@ -48,7 +48,7 @@ social_media:
   # youtube: your_username
 
 post_comments:
-  service: commentbox.io
+  service: disqus
 
 topics:
   - name: PHP
