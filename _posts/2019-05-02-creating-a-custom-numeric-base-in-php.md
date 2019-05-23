@@ -10,7 +10,7 @@ Recently I wanted to create URL's that used words instead of integers for specif
   2. Be repeatable with the same seed.
   3. Be reversible back to their seed.
 
-The idea of a numeric base (or "radix") is pretty simple, you have `x` number of digits to work with (in the most common base, base-10, you have 10 digits to work with: 0-9.) When you reach `x` in the current numeral place, that numeral loops back to `0`and the numeral place to the left has `1` added to it. Although my description of a base may not be the best, you can read more about it here: [Number Bases - Math is Fun](https://www.mathsisfun.com/numbers/bases.html)
+The idea of a numeric base (or "radix") is pretty simple, you have `x` number of digits to work with (in the most common base, base-10, you have 10 digits to work with: 0-9.) When you reach `x` in the current numeral place, that numeral loops back to `0` and the numeral place to the left has `1` added to it. Although my description of a base may not be the best, you can read more about it here: [Number Bases - Math is Fun](https://www.mathsisfun.com/numbers/bases.html)
 
 Most numeric bases up to base-36 use the alphabet to supplement the missing numerals. For example, base-16 uses `[0-1][A-F]`, this way it has the 16 "digits" it requires to create a number in base-16 format.
 
