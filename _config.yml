@@ -47,6 +47,9 @@ social_media:
   # vk: your_username
   # youtube: your_username
 
+post_comments:
+  service: commentbox.io
+
 topics:
   - name: PHP
     web_url: https://github.com/topics/php

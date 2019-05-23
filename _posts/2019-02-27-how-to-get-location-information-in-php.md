@@ -1,6 +1,7 @@
 ---
 title: "How to get someones location information in PHP"
 published: true
+comments: true
 ---
 
 There have been many services available with which to retrieve a clients GeoLocation, the most common that I have seen being [FreeGeoIP](https://github.com/fiorix/freegeoip). Today I’d like to share how you can go about retrieving this information using PHP.

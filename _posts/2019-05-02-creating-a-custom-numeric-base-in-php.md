@@ -1,6 +1,7 @@
 ---
 title: "Creating a custom numeric base in PHP"
 published: true
+comments: true
 ---
 
 Recently I wanted to create URL's that used words instead of integers for specific posts, however, these URL's needed to conform to three points.

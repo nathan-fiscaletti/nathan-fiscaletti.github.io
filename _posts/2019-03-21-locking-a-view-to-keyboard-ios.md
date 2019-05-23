@@ -1,6 +1,7 @@
 ---
 title: "Locking a view to the top of the keyboard in iOS"
 published: true
+comments: true
 ---
 
 Recently I've come across the issue where I need to lock a view to the top of the keyboard when it is displayed in an iOS application. 
