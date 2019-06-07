@@ -55,13 +55,12 @@ $b3val = $base5->convert($b5val, $base3);
 echo "b5($b5val)\t==\tb3($b3val)".PHP_EOL;
 ```
 
-You can create any base up to base-36, after that you must supply a custom dictionary.
+You can create any base up to base-36, after that you must supply a custom library.
 
-## Custom Dictionary
+## Custom Libraries
 
-So, my thought was to supplement all digits within my base with a dictionary of words taken from a text file. My base would be the number of words stored in the file. If the file had `88` words in it, it would be base-88, however wouldn't rely on any numbers or the alphabet and instead would use each word from the document as a "digit".
-
----
+So, my thought was to supplement all digits within my base with a library of words taken from a text file. My base would be the number of words stored in the file. If the file had `88` words in it, it 
+would be base-88, however wouldn't rely on any numbers or the alphabet and instead would use each word from the document as a "digit".
 
 Let's say I have the following text document 
     
@@ -73,39 +72,39 @@ friend
 
 This would be base-3, where `hello` would represent `0`, `there`, would represent `1`, and `friend` would represent `2`.
 
-So, using the following code I could convert a number to base-3 using this special dictionary.
+So, using the following code I could convert a number to base-3 using this special library.
     
 ```php
-$dictionary = file('words.txt', FILE_IGNORE_NEW_LINES);
-$base = new Base(count($dictionary));
-$base->setLibrary($dictionry);
+$library = file('words.txt', FILE_IGNORE_NEW_LINES);
+$base = new Base(count($library));
+$base->setLibrary($library);
 echo $base->parse(954);
 ```
 
 Which would result in `ThereHelloFriendFriendThereHelloHello`
 
----
+> You can convert back to base 10 using the `->toBase10` member function of the `$base` instance.
 
-You can convert back to base 10 using the `->toBase10` member function of the `$base` instance.
+### Using Multiple Libraries
 
-For example, with this library you can use separate dictionaries for different places of the resulting number. In this example, I use one dictionary for the `1s` place, but another for all other numbers. 
+You can also use separate libraries for different places of the resulting number. In this example, I use one library for the `1s` place, but another for all other numbers. 
     
 ```php
-$dictionary1 = file("./adjectives.txt", FILE_IGNORE_NEW_LINES);
-$dictionary2 = file("./nouns.txt", FILE_IGNORE_NEW_LINES);
+$library1 = file("./adjectives.txt", FILE_IGNORE_NEW_LINES);
+$library2 = file("./nouns.txt", FILE_IGNORE_NEW_LINES);
 
-$baseCustom = new Base(count($dictionary1));
-$baseCustom->setLibrary($dictionary1);
+$baseCustom = new Base(count($library1));
+$baseCustom->setLibrary($library1);
 
 // 0 = 1s place, 1 = 10s place, ...
-$baseCustom->putLibrary($dictionary2, 0);
+$baseCustom->putLibrary($library2, 0);
 
 echo $baseCustom->parse(9984134);
 ```
 
-> Note: When using multiple dictionaries like this, they must conform to the same base. (Have the same number of "digits" defined in them.)
+> Note: When using multiple libraries like this, they must conform to the same base. (Have the same number of "digits" defined in them.)
 
-This "multiple dictionaries" feature was added specifically because I wanted to be able to have a format of "AdjectiveAdjectiveNoun" for my final URLs.
+This "multiple libraries" feature was added specifically because I wanted to be able to have a format of "AdjectiveAdjectiveNoun" for my final URLs.
 
 So, a resulting URL might look something like `https://website.com/AbidingEsotericAnthropology` instead of `https://website.com/99653422`
 
@@ -113,8 +112,8 @@ This would allow me to maintain uniqueness, reversibility and repeatability whil
 
 ## Constraints
 
-If you use a custom dictionary they are constrained to three things. 
+If you use a custom library they are constrained to three things. 
 
   * They must use only lower case entries as the library uses capitalization to denote a new "digit".
   * Each entry in the list must be unique
-  * If you are using multiple dictionaries for different places in the number, the dictionaries must be of equal lengths.
+  * If you are using multiple libraries for different places in the number, the libraries must be of equal lengths.
