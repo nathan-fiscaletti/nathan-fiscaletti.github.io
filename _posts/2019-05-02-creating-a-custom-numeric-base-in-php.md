@@ -55,6 +55,34 @@ $b3val = $base5->convert($b5val, $base3);
 echo "b5($b5val)\t==\tb3($b3val)".PHP_EOL;
 ```
 
+You can also do mathematical expressions with a base fairly easily.
+
+```php
+$base2 = new Base(2);
+$base2_13 = $base2->parse(13);
+$base2_10 = $base2->parse(10);
+$base2_2 = $base2->parse(2);
+
+$result = $base2->math(
+    '(#a * #b) / #c', 
+    [
+        'a' => $base2_13, // $base2_13 is 1101
+        'b' => $base2_10, // $base2_10 is 1010
+        'c' => $base2_2   // $base2_2  is 10
+    ]
+);
+
+echo 'in base 2:  (' . $base2_13 . ' * ' . $base2_10 . ') / ' . $base2_2 . ' = ' . $result . PHP_EOL;
+echo 'in base 10: (13 * 10) / 2 = ' . $base2->toBase10($result) . PHP_EOL;
+```
+
+The output would look something like this:
+
+```
+in base 2:  (1101 * 1010) / 10 = 1000001
+in base 10: (13 * 10) / 2 = 65
+```
+
 You can create any base up to base-36, after that you must supply a custom library.
 
 ## Custom Libraries
